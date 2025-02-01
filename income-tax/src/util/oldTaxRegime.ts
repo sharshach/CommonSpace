@@ -1,7 +1,9 @@
 import IncomeTax from "./incomeTax.ts";
 
 export default class OldTaxRegime extends IncomeTax {
-  constructor() {
+  private additionalDeduction: number;
+
+  constructor(additionalDeduction: number) {
     super(
       50000, // standardDeduction
       500000, // initialRelief
@@ -19,5 +21,17 @@ export default class OldTaxRegime extends IncomeTax {
       ], // arrayOfSurcharges
       4 // cess percentage
     );
+    this.additionalDeduction = additionalDeduction;
+  }
+
+  calculateTax(income: number): number {
+    let taxableIncome = income - this.standardDeduction - this.additionalDeduction;
+    if (taxableIncome <= this.initialRelief) return 0;
+
+    let basicTax = this.calculateBasicTax(taxableIncome);
+    let surcharge = this.calculateSurcharge(basicTax, income);
+    let cess = this.calculateCess(basicTax + surcharge);
+
+    return basicTax + surcharge + cess;
   }
 }

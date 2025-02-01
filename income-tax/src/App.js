@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import OldTaxRegime from './util/oldTaxRegime.ts';
 import NewTax2024Regime from './util/newTax2024.ts';
 import NewTax2025Regime from './util/newTax2025.ts';
 
 function App() {
-  const oldTax = new OldTaxRegime();
+  const [additionalDeduction, setAdditionalDeduction] = useState(20000); // Example initial additional deduction
+  const [submittedDeduction, setSubmittedDeduction] = useState(additionalDeduction);
+
+  const handleInputChange = (event) => {
+    setAdditionalDeduction(Number(event.target.value));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSubmittedDeduction(additionalDeduction);
+  };
+
+  const oldTax = new OldTaxRegime(submittedDeduction);
   const newTax2024 = new NewTax2024Regime();
   const newTax2025 = new NewTax2025Regime();
 
@@ -18,6 +30,17 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Tax Calculation for Different Regimes</h1>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Additional Deduction for Old Tax Regime:
+            <input
+              type="number"
+              value={additionalDeduction}
+              onChange={handleInputChange}
+            />
+          </label>
+          <button type="submit">Submit</button>
+        </form>
         <table>
           <thead>
             <tr>
