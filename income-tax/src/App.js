@@ -5,7 +5,7 @@ import NewTax2024Regime from './util/newTax2024.ts';
 import NewTax2025Regime from './util/newTax2025.ts';
 
 function App() {
-  const [additionalDeduction, setAdditionalDeduction] = useState(20000); // Example initial additional deduction
+  const [additionalDeduction, setAdditionalDeduction] = useState(0); // Example initial additional deduction
   const [submittedDeduction, setSubmittedDeduction] = useState(additionalDeduction);
 
   const handleInputChange = (event) => {
@@ -22,7 +22,7 @@ function App() {
   const newTax2025 = new NewTax2025Regime();
 
   const incomeRanges = [];
-  for (let i = 0; i <= 10000000; i += 100000) {
+  for (let i = 0; i <= 20000000; i += 100000) {
     incomeRanges.push(i);
   }
 
@@ -30,6 +30,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Tax Calculation for Different Regimes</h1>
+        <p className="warning">
+          This application is for educational purposes only and should not be used for official calculations. The numbers might be incorrect.
+        </p>
+
+        <p className="thank-note">
+          Thank you to GitHub Copilot for helping in building this website. Check out the project on <a href="https://github.com/sharshach/CommonSpace" target="_blank" rel="noopener noreferrer">GitHub</a>.
+        </p>
+        
         <form onSubmit={handleSubmit}>
           <label>
             Additional Deduction for Old Tax Regime:

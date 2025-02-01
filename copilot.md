@@ -29,3 +29,6 @@ style table properly
 23. Add a text input at top for additional deduction or old tax and give a submit button to rrrender the page
 24. publish via gh pages
 25. income-tax is my folder, How to setup github pages to properly deploy this mu Project name is CommonSpace
+26. Update readme by adding the projects and descriptions
+27. Add a warning that this is just for educational urposes and should not take for any official calculation, the numbers might be wrong also
+28. add a Thank note to Github copilot for helping in building the website and hithub project link
