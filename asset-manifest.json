@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/income-tax/static/css/main.aeeaf9da.css",
+    "main.js": "/income-tax/static/js/main.3a54827b.js",
+    "index.html": "/income-tax/index.html",
+    "main.aeeaf9da.css.map": "/income-tax/static/css/main.aeeaf9da.css.map",
+    "main.3a54827b.js.map": "/income-tax/static/js/main.3a54827b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aeeaf9da.css",
+    "static/js/main.3a54827b.js"
+  ]
+}
