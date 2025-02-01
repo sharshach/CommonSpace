@@ -24,3 +24,8 @@ style table properly
 18. write a textcase - for new tax regime 2024 basic tax should be 140000
 19. @workspace using constructor in newTax2024 update he calculateBasicTax ofIncometax properly in IncomeTax.ts file. current calculation lofgic is wrong
 20. add a new column difference between new2024 and new2025
+21. table header is not freezing at top when i am scrolling
+22. take deduction as one more input and reducr that amount from total amount for old tax
+23. Add a text input at top for additional deduction or old tax and give a submit button to rrrender the page
+24. publish via gh pages
+25. income-tax is my folder, How to setup github pages to properly deploy this mu Project name is CommonSpace
